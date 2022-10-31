@@ -11,6 +11,7 @@ def init_database(db, raw_data):
         user = User(
             id=user_data.get("id"),
             first_name=user_data.get("first_name"),
+            age=user_data.get("age"),
             email=user_data.get("email"),
             role=user_data.get("role"),
             phone=user_data.get("phone")
@@ -24,6 +25,7 @@ def init_database(db, raw_data):
             description=order_data.get("description"),
             start_date=order_data.get("start_date"),
             end_date=order_data.get("end_date"),
+            address=order_data.get("address"),
             price=order_data.get("price"),
             customer_id=order_data.get("customer_id"),
             executor_id=order_data.get("executor_id")

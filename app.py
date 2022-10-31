@@ -30,12 +30,10 @@ def users_page():
         return ""
 
 
-@app.route("/users/{int: uid}", methods=["GET", "PUT", "DELETE"])
+@app.route("/users/<int:uid>", methods=["GET", "PUT", "DELETE"])
 def users_uid_page(uid):
     if request.method == "GET":
-        print(uid)
         user = User.query.get(uid).to_dict()
-        print(user)
         return json.dumps(user)
 
     if request.method == "PUT":
@@ -88,7 +86,7 @@ def orders_page():
         return "", 201
 
 
-@app.route("/orders/{int: oid}", methods=["GET", "PUT", "DELETE"])
+@app.route("/orders/<int:oid>", methods=["GET", "PUT", "DELETE"])
 def orders_uid_page(oid):
     if request.method == "GET":
         order = Order.query.get(oid).to_dict()
@@ -142,7 +140,7 @@ def offers_page():
         return "", 201
 
 
-@app.route("/offers/{int: oid}", methods=["GET", "PUT", "DELETE"])
+@app.route("/offers/<int:oid>", methods=["GET", "PUT", "DELETE"])
 def offers_uid_page(oid):
     if request.method == "GET":
         offer = Offer.query.get(oid).to_dict()
